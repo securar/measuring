@@ -2,7 +2,11 @@ from measuring import Measurer
 
 measurer = Measurer()
 
-
-with measurer.region("long loop"):
-    for _ in range(20_000_000):
+@measurer.func
+def loop_func() -> None:
+    for _ in range(5_000_000):
         continue
+    
+if __name__ == "__main__":
+    with measurer.region("long loop"):
+        loop_func()
