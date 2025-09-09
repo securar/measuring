@@ -1,17 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [project]
 name = "measuring"
 version = "0.1.0"
 description = "Simple library that helps you measure code execution time"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = []
 
 [dependency-groups]
-dev = [
-    "mypy>=1.17.1",
-    "pyright>=1.1.404",
-    "ruff>=0.12.10",
-]
-
-[project.scripts]
-measure = "measuring.__main__:main"
+dev = ["mypy>=1.17.1", "pyright>=1.1.404", "ruff>=0.12.10"]

@@ -4,7 +4,7 @@ exclude = [".venv", ".*_cache"]
 line-length = 79
 indent-width = 4
 
-target-version = "py313"
+target-version = "py312"
 
 [lint]
 select = ["ALL"]
@@ -23,6 +23,7 @@ ignore = [
     "C901",
     "PLR0911",
     "PLR0912",
+    "D413",
 
     # sometimes it's harder to read
     "RET506",
@@ -66,10 +67,6 @@ unfixable = []
 
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-
-[lint.per-file-ignores]
-"tests/*" = ["S101", "ANN201"]
-"src/lancehub/startup.py" = ["TRY400"]
 
 [lint.flake8-tidy-imports]
 ban-relative-imports = "parents"
