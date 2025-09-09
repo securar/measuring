@@ -1,8 +1,8 @@
 import sys
 from typing import Any, TextIO
 
-from measuring.entities import Measurement
 from measuring.enums import TimeUnit
+from measuring.models import Measurement
 
 
 def set_measurement_kind(measurement: Measurement, **_kw: Any) -> dict:

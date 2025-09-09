@@ -6,16 +6,15 @@ from measuring.api.protocols import Counter
 from measuring.entities import (
     DefaultCounter,
     EventObserver,
-    Measurement,
 )
 from measuring.enums import TimeUnit
-from measuring.models import Function, Region
+from measuring.models import Function, Measurement, Region
 from measuring.processors import (
     ConsolePrinter,
     set_measurement_kind,
     set_measurement_name,
 )
-from measuring.utils import ProcessorType, dump_event_data, ensure_processors
+from measuring.utils import ProcessorType, ensure_processors
 
 P = ParamSpec("P")
 T = TypeVar("T")
