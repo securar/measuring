@@ -36,5 +36,5 @@ def loop(*_args: Any, **_kwargs: Any) -> None:
     for _ in range(20_000_00):
         continue
 
-
-loop(42, foo="bar")
+if __name__ == "__main__":
+    loop(42, foo="bar")
