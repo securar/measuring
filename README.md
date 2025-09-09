@@ -1,4 +1,4 @@
-## Library `measuring` simplifies measuring code execution time
+## The `measuring` library makes it easier to measure code execution time.
 
 ### Example:
 ```python
