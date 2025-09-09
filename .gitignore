@@ -1,0 +1,23 @@
+# Git directory
+.git
+
+# IDE and text editors
+.vscode
+.idea
+*.code-workspace
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Caches
+.mypy_cache
+.pytest_cache
+.ruff_cache

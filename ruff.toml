@@ -1,0 +1,95 @@
+include = ["src/*"]
+exclude = [".venv", ".*_cache"]
+
+line-length = 79
+indent-width = 4
+
+target-version = "py313"
+
+[lint]
+select = ["ALL"]
+extend-select = ["ALL"]
+ignore = [
+    "UP047",
+    "ANN401",
+    "PYI051",
+    "PLR0913",
+    "PIE790",
+    "T201",
+    "A002",
+    "EM101",
+    "EM102",
+    "TRY003",
+    "C901",
+    "PLR0911",
+    "PLR0912",
+
+    # sometimes it's harder to read
+    "RET506",
+
+    # don't need it
+    "TD003",
+    "TD002",
+
+    # conflicts with formatter
+    "COM812",
+    "COM819",
+
+    # docstrings
+    "D1",
+    "D203",
+    "D213",
+
+    # formatter will take care of it
+    "W293",
+
+    # for russian language
+    "RUF001",
+
+    # identical by code != identical by meaning
+    "SIM114",
+
+    # awful things, never use.
+    # it makes runtime work differently from typechecker
+    "TC001",
+    "TC002",
+    "TC003",
+    "TC006",
+
+    # only affects performance and brings nothing useful
+    "UP038",
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[lint.per-file-ignores]
+"tests/*" = ["S101", "ANN201"]
+"src/lancehub/startup.py" = ["TRY400"]
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = false
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
